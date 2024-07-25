@@ -22,3 +22,11 @@ news_items = soup.find_all('div', class_='news-item-title text-of')
 for item in news_items:
     title = item.text.strip()
     print(f"Title: {title}")
+
+match_items = soup.find_all('a', class_='wf-module-item mod-match mod-color mod-bg-after-green')
+for item in match_items:
+    match_link = item.get('href')
+    match_title = item.get_text(strip=True)
+    print(f"Match Title: {match_title}")
+    print(f"Link: https://www.vlr.gg{match_link}")
+    print("-" * 20)
